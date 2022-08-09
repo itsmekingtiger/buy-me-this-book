@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "Buy me this book",
+    "version": "1.0",
+    "description": "책 사달라고 품의서 올릴때 사용, 열린 Yes24/교보문고 탭의 정보를 가져옴",
+    "icons": {
+        "48": "icon48.png"
+    },
+    "permissions": [
+        "activeTab",
+        "clipboardWrite"
+    ],
+    "browser_action": {
+        "default_icon": "icon48.png",
+        "default_title": "But me this book!"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.mozilla.org/*"
+            ],
+            "js": [
+                "buy_me_this_book.js"
+            ]
+        }
+    ]
+}
