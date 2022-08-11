@@ -74,48 +74,10 @@ async function onClicked() {
                 target: {
                     tabId: tab.id
                 },
-                func: async () => {
-                    const Attr = {
-                        Price: "price",
-                        Title: "title",
-                        Author: "author",
-                        Publisher: "publisher",
-                        PublishedAt: "publishedAt",
-                    };
-
-                    const yes24 = () => ({
-                        Price: document.querySelector(".nor_price > em:nth-child(1)").textContent,
-                        Title: document.querySelector(".gd_titArea > h2:nth-child(1)").textContent,
-                        Author: document.querySelector(".gd_auth").textContent.trim(),
-                        Publisher: document.querySelector(".gd_pub > a:nth-child(1)").textContent.trim(),
-                        PublishedAt: document.querySelector(".gd_date").textContent.trim(),
-                    });
-
-                    const asList = (data) => {
-                        let strings = [];
-
-                        for (const key in data) {
-                            strings.push(data[key]);
-                        }
-
-                        return strings;
-                    };
-
-
-                    const txtData = JSON.stringify(asList(yes24()).join('|'));
-                    console.log(txtData);
-                    navigator.clipboard.writeText(txtData)
-                        .then(
-                            () => {
-                                console.log("ok");
-                            },
-                            (err) => {
-                                console.error(err);
-                            }
-                        );
-                },
+                files: ["src/script.js"]
             });
 
+            // 에러 체크
             console.log(result);
         } catch (error) {
             console.error(`failed to execute script: ${error}`);

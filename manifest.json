@@ -7,11 +7,11 @@
         "48": "icon48.png"
     },
     "permissions": [
+        "*://*.yes24.com/*",
         "activeTab",
         "clipboardWrite",
-        "tabs",
         "scripting",
-        "*://*.yes24.com/*"
+        "tabs"
     ],
     "browser_action": {
         "default_icon": "icon48.png",
@@ -19,7 +19,8 @@
     },
     "background": {
         "scripts": [
-            "src/background.js"
+            "src/background.js",
+            "src/script.js"
         ]
     }
 }
