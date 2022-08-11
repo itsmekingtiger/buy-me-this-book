@@ -28,7 +28,7 @@ function yes24() {
 
 
 
-function byMeThisBook() {
+const getData = function byMeThisBook() {
     const host = window.location.host;
 
     switch (host) {
@@ -36,6 +36,9 @@ function byMeThisBook() {
             return yes24()
 
         default:
+            console.log("non");
             break;
     }
 }
+
+export { getData };

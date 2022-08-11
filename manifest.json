@@ -8,7 +8,10 @@
     },
     "permissions": [
         "activeTab",
-        "clipboardWrite"
+        "clipboardWrite",
+        "tabs",
+        "scripting",
+        "*://*.yes24.com/*"
     ],
     "browser_action": {
         "default_icon": "icon48.png",
@@ -16,17 +19,7 @@
     },
     "background": {
         "scripts": [
-            "background.js"
+            "src/background.js"
         ]
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "*://*.mozilla.org/*"
-            ],
-            "js": [
-                "buy_me_this_book.js"
-            ]
-        }
-    ]
+    }
 }
