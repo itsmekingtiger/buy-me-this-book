@@ -3,7 +3,7 @@ console.log("스크립트!");
 
 const yes24 = () => ({
     Price: document.querySelector(".nor_price > em:nth-child(1)").textContent,
-    Title: document.querySelector(".gd_titArea > h2:nth-child(1)").textContent,
+    Title: document.querySelector(".gd_titArea > h2").textContent,
     Author: document.querySelector(".gd_auth").textContent.trim(),
     Publisher: document.querySelector(".gd_pub > a:nth-child(1)").textContent.trim(),
     PublishedAt: document.querySelector(".gd_date").textContent.trim(),
@@ -45,7 +45,7 @@ function copyToClipboard(textToCopy) {
 }
 
 
-const txtData = JSON.stringify(asList(yes24()).join('|'));
+const txtData = asList(yes24()).join('\t');
 
 copyToClipboard(txtData);
 console.log(txtData);
